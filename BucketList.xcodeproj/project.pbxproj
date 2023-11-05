@@ -11,6 +11,7 @@
 		B5EDEC382AF11D9C00B3E9AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDEC372AF11D9C00B3E9AF /* ContentView.swift */; };
 		B5EDEC3A2AF11D9E00B3E9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EDEC392AF11D9E00B3E9AF /* Assets.xcassets */; };
 		B5EDEC3D2AF11D9E00B3E9AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EDEC3C2AF11D9E00B3E9AF /* Preview Assets.xcassets */; };
+		B5EDEC442AF1263000B3E9AF /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDEC432AF1263000B3E9AF /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B5EDEC372AF11D9C00B3E9AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5EDEC392AF11D9E00B3E9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5EDEC3C2AF11D9E00B3E9AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5EDEC432AF1263000B3E9AF /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				B5EDEC352AF11D9C00B3E9AF /* BucketListApp.swift */,
 				B5EDEC372AF11D9C00B3E9AF /* ContentView.swift */,
+				B5EDEC432AF1263000B3E9AF /* extensions.swift */,
 				B5EDEC392AF11D9E00B3E9AF /* Assets.xcassets */,
 				B5EDEC3B2AF11D9E00B3E9AF /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EDEC442AF1263000B3E9AF /* extensions.swift in Sources */,
 				B5EDEC382AF11D9C00B3E9AF /* ContentView.swift in Sources */,
 				B5EDEC362AF11D9C00B3E9AF /* BucketListApp.swift in Sources */,
 			);
