@@ -8,14 +8,14 @@
 import Foundation
 
 extension FileManager {
-    private func getDocumentsDirectory() -> URL {
+    static var documentsDirectory: URL {
         // find full path of directory
-        let paths = self.urls(for: .documentDirectory, in: .userDomainMask)
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
     func encodeToFile<T: Encodable>(content: T, fileName: String) {
-        let url = getDocumentsDirectory().appendingPathComponent(fileName)
+        let url = FileManager.documentsDirectory.appendingPathComponent(fileName)
         let encoder = JSONEncoder()
         
         do {
@@ -31,7 +31,7 @@ extension FileManager {
     
     func decode<T: Decodable>(_ type: T.Type, from fileName: String) -> T {
         
-        let url = getDocumentsDirectory().appending(path: fileName)
+        let url = FileManager.documentsDirectory.appending(path: fileName)
 
         guard let data = try? Data(contentsOf: url) else {
             fatalError("Failed to load \(fileName) from bundle.")
