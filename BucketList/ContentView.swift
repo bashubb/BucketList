@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ViewModel()
     
+    
     var body: some View {
         if viewModel.isUnlocked {
             ZStack {
@@ -49,13 +50,14 @@ struct ContentView: View {
                             viewModel.addLocation()
                         } label: {
                             Image(systemName: "plus")
+                                .padding()
+                                .background(.black.opacity(0.75))
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .clipShape(Circle())
+                                .padding(.trailing)
                         }
-                        .padding()
-                        .background(.black.opacity(0.75))
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .clipShape(Circle())
-                        .padding(.trailing)
+                       
                     }
                 }
             }
@@ -73,8 +75,14 @@ struct ContentView: View {
             .background(Color.blue)
             .foregroundStyle(Color.white)
             .clipShape(Capsule())
+            .alert("Authentication Problem", isPresented: $viewModel.showingErrorAlert) {
+                
+            } message: {
+                Text(viewModel.errorMessage)
+            }
 
         }
+        
     }
     
     

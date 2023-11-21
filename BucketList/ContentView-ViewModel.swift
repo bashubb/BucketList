@@ -15,6 +15,8 @@ extension ContentView {
         @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
+        @Published var errorMessage = ""
+        @Published var showingErrorAlert = false
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
         
@@ -70,7 +72,10 @@ extension ContentView {
                         }
                        
                     } else {
-                        //error
+                        Task { @MainActor in
+                            self.showingErrorAlert = true
+                            self.errorMessage = "Some problem with authenticate"
+                        }
                     }
                     
                 }
