@@ -66,21 +66,19 @@ extension ContentView {
                 let reason = "Please authenticate yourself to unlock uour places."
                 
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-                    if success {
-                        Task { @MainActor in 
+                    Task{ @MainActor in
+                        if success {
                             self.isUnlocked = true
-                        }
-                       
-                    } else {
-                        Task { @MainActor in
+                        } else {
                             self.showingErrorAlert = true
-                            self.errorMessage = "Some problem with authenticate"
+                            self.errorMessage = "There was a problem authenticating you"
                         }
                     }
-                    
                 }
             } else {
-                // no biometrics
+                errorMessage = "Sorry, your device does not support biometric authentivation."
+                showingErrorAlert = true
+                
             }
         }
         
